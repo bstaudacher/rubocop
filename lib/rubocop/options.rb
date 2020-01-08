@@ -13,7 +13,7 @@ module RuboCop
       'root of the project. RuboCop will use this path to determine which ' \
       'cops are enabled (via eg. Include/Exclude), and so that certain cops ' \
       'like Naming/FileName can be checked.'
-    EXITING_OPTIONS = %i[version verbose_version show_cops].freeze
+    EXITING_OPTIONS = %i[version verbose_version show_cops config_sha].freeze
     DEFAULT_MAXIMUM_EXCLUSION_ITEMS = 15
 
     def initialize
@@ -170,6 +170,7 @@ module RuboCop
 
       option(opts, '-v', '--version')
       option(opts, '-V', '--verbose-version')
+      option(opts, '--config_sha')
       option(opts, '-P', '--parallel')
     end
 
@@ -449,6 +450,7 @@ module RuboCop
       color:                            'Force color output on or off.',
       version:                          'Display version.',
       verbose_version:                  'Display verbose version.',
+      config_sha:                       'Displays the current SHA of the configuration.',
       parallel:                         ['Use available CPUs to execute inspection in',
                                          'parallel.'],
       stdin:                            ['Pipe source from STDIN, using FILE in offense',
