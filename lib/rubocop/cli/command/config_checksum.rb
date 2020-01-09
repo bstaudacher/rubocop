@@ -4,11 +4,11 @@ module RuboCop
   class CLI
     module Command
       # Display version.
-      class ConfigSha < Base
+      class ConfigChecksum < Base
         self.command_name = :config_checksum
 
         def run
-          puts @config_store.sha
+          puts @config_store.checksum
         end
       end
     end
