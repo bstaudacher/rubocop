@@ -45,7 +45,7 @@ module RuboCop
                               end
     end
 
-    def sha
+    def checksum
       signatures = @object_cache.values.map { |config| config.signature }
       Digest::SHA1.hexdigest(signatures.join)
     end

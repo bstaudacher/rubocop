@@ -5,7 +5,7 @@ module RuboCop
     module Command
       # Display version.
       class ConfigSha < Base
-        self.command_name = :config_sha
+        self.command_name = :config_checksum
 
         def run
           puts @config_store.sha
