@@ -118,7 +118,7 @@ RSpec.describe RuboCop::Options, :isolated_environment do
               -V, --verbose-version            Display verbose version.
               -P, --parallel                   Use available CPUs to execute inspection in
                                                parallel.
-                  --config_sha                 Display the SHA of the current configuration.
+                  --config-sha                 Display the SHA of the current configuration.
               -l, --lint                       Run only lint cops.
               -x, --fix-layout                 Run only layout cops, with auto-correct on.
                   --safe-auto-correct          Run auto-correct only when it's safe.
@@ -175,28 +175,28 @@ RSpec.describe RuboCop::Options, :isolated_environment do
           .to raise_error(RuboCop::OptionArgumentError, msg)
       end
 
-      it 'rejects using -v with --config_sha' do
-        msg = 'Incompatible cli options: [:version, :config_sha]'
-        expect { options.parse %w[-v --config_sha] }
+      it 'rejects using -v with --config-sha' do
+        msg = 'Incompatible cli options: [:version, :config-sha]'
+        expect { options.parse %w[-v --config-sha] }
           .to raise_error(RuboCop::OptionArgumentError, msg)
       end
 
-      it 'rejects using -V with --config_sha' do
-        msg = 'Incompatible cli options: [:verbose_version, :config_sha]'
-        expect { options.parse %w[-V --config_sha] }
+      it 'rejects using -V with --config-sha' do
+        msg = 'Incompatible cli options: [:verbose_version, :config-sha]'
+        expect { options.parse %w[-V --config-sha] }
           .to raise_error(RuboCop::OptionArgumentError, msg)
       end
       
-      it 'rejects using --show_cops with --config_sha' do
-        msg = 'Incompatible cli options: [:show_cops, :config_sha]'
-        expect { options.parse %w[--show_cops --config_sha] }
+      it 'rejects using --show_cops with --config-sha' do
+        msg = 'Incompatible cli options: [:show_cops, :config-sha]'
+        expect { options.parse %w[--show_cops --config-sha] }
           .to raise_error(RuboCop::OptionArgumentError, msg)
       end
 
       it 'mentions all incompatible options when more than two are used' do
         msg = 'Incompatible cli options: [:version, :verbose_version,' \
-              ' :show_cops, :config_sha]'
-        expect { options.parse %w[-vV --show-cops --config_sha] }
+              ' :show_cops, :config-sha]'
+        expect { options.parse %w[-vV --show-cops --config-sha] }
           .to raise_error(RuboCop::OptionArgumentError, msg)
       end
     end

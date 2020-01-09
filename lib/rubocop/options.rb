@@ -170,7 +170,7 @@ module RuboCop
 
       option(opts, '-v', '--version')
       option(opts, '-V', '--verbose-version')
-      option(opts, '--config_sha')
+      option(opts, '--config-sha')
       option(opts, '-P', '--parallel')
     end
 
