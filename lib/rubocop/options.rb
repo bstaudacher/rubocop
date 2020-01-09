@@ -450,7 +450,7 @@ module RuboCop
       color:                            'Force color output on or off.',
       version:                          'Display version.',
       verbose_version:                  'Display verbose version.',
-      config_checksum:                  'Displays the current SHA of the configuration.',
+      config_checksum:                  'Displays the current checksum of the configuration.',
       parallel:                         ['Use available CPUs to execute inspection in',
                                          'parallel.'],
       stdin:                            ['Pipe source from STDIN, using FILE in offense',
