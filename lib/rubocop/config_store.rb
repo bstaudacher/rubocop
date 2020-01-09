@@ -44,5 +44,10 @@ module RuboCop
                                 ConfigLoader.configuration_from_file(path)
                               end
     end
+
+    def checksum
+      signatures = @object_cache.values.map { |config| config.signature }
+      Digest::SHA1.hexdigest(signatures.join)
+    end
   end
 end

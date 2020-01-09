@@ -143,6 +143,7 @@ Command flag                    | Description
 `-x/--fix-layout`               | Auto-correct only code layout (formatting) offenses.
 `-v/--version`                  | Displays the current version and exits.
 `-V/--verbose-version`          | Displays the current version plus the version of Parser and Ruby.
+`   --config-checksum`          | Displays the current checksum of the configuration.
 
 Default command-line options are loaded from `.rubocop` and `RUBOCOP_OPTS` and are combined with command-line options that are explicitly passed to `rubocop`.
 Thus, the options have the following order of precedence (from highest to lowest):

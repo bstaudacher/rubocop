@@ -107,6 +107,7 @@ module RuboCop
 
       run_command(:version) if @options[:version] || @options[:verbose_version]
       run_command(:show_cops) if @options[:show_cops]
+      run_command(:config_checksum) if @options[:config_checksum]
       raise Finished
     end
 
